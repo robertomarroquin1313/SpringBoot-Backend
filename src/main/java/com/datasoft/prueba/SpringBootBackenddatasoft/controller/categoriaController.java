@@ -1,7 +1,6 @@
 package com.datasoft.prueba.SpringBootBackenddatasoft.controller;
 
 import com.datasoft.prueba.SpringBootBackenddatasoft.Persistence.Categoria;
-import com.datasoft.prueba.SpringBootBackenddatasoft.Persistence.Producto;
 import com.datasoft.prueba.SpringBootBackenddatasoft.service.categoriaImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

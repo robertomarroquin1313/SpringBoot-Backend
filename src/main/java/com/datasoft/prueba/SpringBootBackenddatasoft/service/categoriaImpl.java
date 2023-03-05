@@ -1,7 +1,6 @@
 package com.datasoft.prueba.SpringBootBackenddatasoft.service;
 
 import com.datasoft.prueba.SpringBootBackenddatasoft.Persistence.Categoria;
-import com.datasoft.prueba.SpringBootBackenddatasoft.Persistence.Producto;
 import com.datasoft.prueba.SpringBootBackenddatasoft.repository.categoriaRepository;
 import com.datasoft.prueba.SpringBootBackenddatasoft.service.interfaces.categoriaService;
 import org.springframework.beans.factory.annotation.Autowired;

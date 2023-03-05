@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Data @Entity @Table(name = "productos")
+@Data @Entity @Table(name = "productos",  schema ="prueba_tecnica_java_spring_springboot")
 public class Producto {
 
     /*
@@ -18,6 +18,7 @@ public class Producto {
  * */
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter @Setter
     private Long idProd;
 
     @Column (name = "prd_nombre")

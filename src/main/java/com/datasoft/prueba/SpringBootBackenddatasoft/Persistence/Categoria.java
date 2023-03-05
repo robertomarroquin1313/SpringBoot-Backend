@@ -5,7 +5,9 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Data @Entity @Table(name = "categorias")
+@Data
+@Entity
+@Table(name = "categorias" , schema ="prueba_tecnica_java_spring_springboot")
 public class Categoria {
 
     /*cat_id int primary key,
@@ -13,7 +15,9 @@ cat_nombre varchar(50),
 cat_orden int,
 cat_imagen LONGBLOB*/
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cat_id")
     private Long idCategoria;
 
     @Column (name = "cat_nombre")
