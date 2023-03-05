@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @Service
 public class categoriaImpl  implements categoriaService {
+
     @Autowired
     categoriaRepository repositoryCategoria;
 
@@ -25,9 +26,6 @@ public class categoriaImpl  implements categoriaService {
         }
         return cate.get();
     }
-
-
-
 
 
 }

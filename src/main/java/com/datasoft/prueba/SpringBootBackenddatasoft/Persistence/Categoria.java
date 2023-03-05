@@ -19,11 +19,12 @@ public class Categoria {
 
     /*
 
-cat_id int primary key,
-cat_nombre varchar(50),
-cat_orden int,
-cat_imagen LONGBLOB
-*/
+    cat_id int primary key,
+    cat_nombre varchar(50),
+    cat_orden int,
+    cat_imagen LONGBLOB
+
+    */
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,6 +45,7 @@ cat_imagen LONGBLOB
     @Getter
     @Setter
     private byte[] cat_imagen;
+
 
 
 

@@ -1,6 +1,7 @@
 package com.datasoft.prueba.SpringBootBackenddatasoft.Persistence;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,15 +13,13 @@ import lombok.Setter;
 public class Producto {
 
     /*
-    *
-    *
- prd_id int primary key auto_increment,
- prd_nombre varchar(50),
- prd_descripcion varchar(200),
- prd_precio float(6,2),
- cat_id int ,
- prd_imagen longblob,
- * */
+        prd_id int primary key auto_increment,
+        prd_nombre varchar(50),
+        prd_descripcion varchar(200),
+        prd_precio float(6,2),
+        cat_id int ,
+        prd_imagen longblob,
+   */
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="prd_id")
