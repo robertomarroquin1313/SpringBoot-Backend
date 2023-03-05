@@ -5,13 +5,16 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Data
 @Entity
 @Table(name = "productos",  schema ="prueba_tecnica_java_spring_springboot")
 public class Producto {
 
     /*
-    * prd_id int primary key auto_increment,
+    *
+    *
+ prd_id int primary key auto_increment,
  prd_nombre varchar(50),
  prd_descripcion varchar(200),
  prd_precio float(6,2),

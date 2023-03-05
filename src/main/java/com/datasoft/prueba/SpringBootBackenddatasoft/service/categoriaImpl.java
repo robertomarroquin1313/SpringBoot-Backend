@@ -11,7 +11,6 @@ import java.util.Optional;
 
 @Service
 public class categoriaImpl  implements categoriaService {
-
     @Autowired
     categoriaRepository repositoryCategoria;
 
@@ -27,29 +26,8 @@ public class categoriaImpl  implements categoriaService {
         return cate.get();
     }
 
-    public  String saveCategoria(Categoria cate){
-        if(repositoryCategoria.save(cate)!=null){
-            return "SAVED";
-        }
-        return "UNSAVED";
-    }
 
-    public String deleteCategoria(Long id) throws Exception{
-        Optional<Categoria> cate= repositoryCategoria.findById(id);
-        if(!cate.isPresent()){
-            return "Can not delete it";
-        }
-        Categoria cate2 = cate.get();
-        repositoryCategoria.delete(cate2);
-        return "Deleted";
 
-    }
 
-    public String updateCategoria(Categoria cate){
-        if(repositoryCategoria.save(cate)!=null){
-            return "Saved";
-        }
-        return "Unsaved";
-    }
 
 }

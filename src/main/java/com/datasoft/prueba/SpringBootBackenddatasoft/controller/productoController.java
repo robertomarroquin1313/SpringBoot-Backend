@@ -26,26 +26,4 @@ public class productoController {
         return new ResponseEntity<Producto>(product.getProdById(id),HttpStatus.FOUND);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public  ResponseEntity<String> saveProducto(@RequestBody Producto prod){
-        return new ResponseEntity<String>(product.saveProd(prod),HttpStatus.CREATED);
-    }
-
-    @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<String> deleteProd(@PathVariable Long id) throws Exception{
-        return new ResponseEntity<String>(product.deleteProd(id),HttpStatus.OK);
-    }
-
-    @RequestMapping(value = "{id}", method = RequestMethod.PUT)
-    public ResponseEntity<String> updateDepartment(@PathVariable Long id, @RequestBody Producto prod){
-        prod.setIdProd(id);
-        String message = product.updateProducto(prod);
-        if(message.equals("Can't delete it")){
-            throw new RuntimeException("No se pudo actualizar registro");
-        }
-        return new ResponseEntity<>(message, HttpStatus.OK);
-    }
-
-
-
 }

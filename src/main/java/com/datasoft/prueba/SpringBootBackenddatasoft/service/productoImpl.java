@@ -11,7 +11,6 @@ import java.util.Optional;
 
 @Service
 public class productoImpl implements productoService {
-
     @Autowired
     productoRepository repositoryProducto;
 
@@ -28,28 +27,5 @@ public class productoImpl implements productoService {
         return prod.get();
     }
 
-    public  String saveProd(Producto prod){
-        if(repositoryProducto.save(prod)!=null){
-            return "SAVED";
-        }
-        return "UNSAVED";
-    }
 
-    public String deleteProd(Long id) throws Exception{
-        Optional<Producto> prod= repositoryProducto.findById(id);
-        if(!prod.isPresent()){
-            return "Can not delete it";
-        }
-        Producto pprod = prod.get();
-        repositoryProducto.delete(pprod);
-        return "Deleted";
-
-    }
-
-    public String updateProducto(Producto prod){
-        if(repositoryProducto.save(prod)!=null){
-            return "Saved";
-        }
-        return "Unsaved";
-    }
 }

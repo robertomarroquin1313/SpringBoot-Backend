@@ -19,8 +19,7 @@ import java.util.List;
 @RequestMapping("api/categorias")
 public class categoriaController {
 
-    @Autowired
-    private categoriaRepository repositorycategoria;
+
     @Autowired
     categoriaImpl cate;
 
@@ -34,26 +33,5 @@ public class categoriaController {
         return new ResponseEntity<Categoria>(cate.getCategoriaById(id),HttpStatus.FOUND);
     }
 
-   // @RequestMapping(method = RequestMethod.POST)
-    @PostMapping
-    public  ResponseEntity<Categoria> saveCategoria(@RequestBody Categoria cate2) {
-        Categoria nuevaCategoria = repositorycategoria.save(cate2);
-        return new ResponseEntity<>(nuevaCategoria,HttpStatus.CREATED);
-    }
-
-    @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<String> deleteCategoria(@PathVariable Long id) throws Exception{
-        return new ResponseEntity<String>(cate.deleteCategoria(id),HttpStatus.OK);
-    }
-
-    @RequestMapping(value = "{id}", method = RequestMethod.PUT)
-    public ResponseEntity<String> updateCategoria(@PathVariable Long id, @RequestBody Categoria cate2){
-        cate2.setIdCategoria(id);
-        String message = cate.updateCategoria(cate2);
-        if(message.equals("Can't delete it")){
-            throw new RuntimeException("No se pudo actualizar registro");
-        }
-        return new ResponseEntity<>(message, HttpStatus.OK);
-    }
 
 }
