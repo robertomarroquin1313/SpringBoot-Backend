@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Data
 @Entity
 @Table(name = "categorias" , schema ="prueba_tecnica_java_spring_springboot")
@@ -30,5 +31,6 @@ cat_imagen LONGBLOB*/
 
     @Column (name = "cat_imagen")
     @Getter @Setter
-    private  byte cat_imagen;
+    private byte cat_imagen;
+
 }

@@ -1,18 +1,26 @@
 package com.datasoft.prueba.SpringBootBackenddatasoft.controller;
 
 import com.datasoft.prueba.SpringBootBackenddatasoft.Persistence.Categoria;
+import com.datasoft.prueba.SpringBootBackenddatasoft.repository.categoriaRepository;
 import com.datasoft.prueba.SpringBootBackenddatasoft.service.categoriaImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.awt.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 
 @RestController
 @RequestMapping("api/categorias")
 public class categoriaController {
 
+    @Autowired
+    private categoriaRepository repositorycategoria;
     @Autowired
     categoriaImpl cate;
 
@@ -26,9 +34,11 @@ public class categoriaController {
         return new ResponseEntity<Categoria>(cate.getCategoriaById(id),HttpStatus.FOUND);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public  ResponseEntity<String> saveCategoria(@RequestBody Categoria cate2){
-        return new ResponseEntity<String>(cate.saveCategoria(cate2),HttpStatus.CREATED);
+   // @RequestMapping(method = RequestMethod.POST)
+    @PostMapping
+    public  ResponseEntity<Categoria> saveCategoria(@RequestBody Categoria cate2) {
+        Categoria nuevaCategoria = repositorycategoria.save(cate2);
+        return new ResponseEntity<>(nuevaCategoria,HttpStatus.CREATED);
     }
 
     @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
